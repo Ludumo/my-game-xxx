@@ -1,34 +1,37 @@
-function Game() {
-    constructor() {
-        this.player = new Player();
-    }
-}
+const game = new Game();
 
-class Player {
-    constructor() {
-        this.x = 500;
-        this.y = 500;
-        this.width = 100;
-        this.height = 100;
-        this.image;
-    }
-
+function preload() {
+ // here we pre load game assets
+ game.preloadGame();
 }
 
 function setup() {
- 
+ createCanvas(600, 600);
 }
 
-function preload() {
-
-}
 
 
 
 function draw() {
- 
+ game.draw();
 }
 
-function keyPressed() {
-     
-}
+/* function keyPressed() {
+    console.log(keyCode)
+    if (![39, 37, 40, 38].includes(keyCode)) {
+       // alert('wrong keycode');
+    }
+    if (keyCode === 39) {
+        //move player right
+        game.player.moveRight();
+    } 
+    if (keyCode === 37) {
+        game.player.moveLeft();
+    }
+    if (keyCode === 40) {
+    game.player.moveDown();
+    }
+    if (keyCode === 38) {
+    game.player.moveUp();
+    }  
+} */

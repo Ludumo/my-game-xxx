@@ -1,5 +1,7 @@
 //this preloads game assests 
-let playerImage;
+
+/* let playerImage;
+let playerX = 100;
 
 function preload() {
     playerImage = loadImage('barry.png');
@@ -18,14 +20,14 @@ function setup() {
 
 function draw() {
 
+clear(); */
 //this renders the imgae
 //image(imageItself, x, y, width, height)
 
-image(playerImage, 200, 100, 100, 100) 
+//image(playerImage, playerX, 100, 100, 100) 
 
 
     //this clears the canvas
-    //clear();
    // console.log('i am drawing')
    //this move circle along the cursor
    // console.log(mouseX, mouseY)
@@ -41,8 +43,8 @@ image(playerImage, 200, 100, 100, 100)
     //circle(x, 400, 100);
     // this creates a rectangle
     // rect(xCoordinate, yCoordinate, width, height) 
-    fill('blue')
-    stroke('red')
+    //fill('blue')
+    //stroke('red')
     //rect(100, 100, 50, 50);
 
     
@@ -52,4 +54,14 @@ image(playerImage, 200, 100, 100, 100)
     //line(startX, startY, endX, endY)
     //line(0, 500, 1000, 500)
     //line(0, 550, 1000, 550)
-}
+//}
+
+// here you can 
+/* function keyPressed() {
+    console.log('key pressed');
+    console.log(keyCode);
+    if (keyCode === 39) {
+        //move player left
+        playerX += 20;
+    }
+} */
