@@ -1,7 +1,7 @@
 class Background {
     draw() {
-        console.log('this is background drawing'); 
-        console.log(width, height); 
+        //console.log('this is background drawing'); 
+        //console.log(width, height); 
 
         game.backgroundImages.forEach(function(img) {
             img.x -= img.speed;

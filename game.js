@@ -1,6 +1,16 @@
 class Game {
+
     constructor() {
+        /* this.background = new Background();
+            this.player = new Player(); */
+        this.backgroundImages = [];
+        this.playerImage = null;
+        this.obstacles = [];    
+    }
+
+    setup() {
         this.background = new Background();
+            this.player = new Player();
     }
 
     preloadGame() {
@@ -14,7 +24,9 @@ class Game {
             {src:loadImage('background pics/7.png'), x: 0, speed: 6},
             {src:loadImage('background pics/8.png'), x: 0, speed: 7},
             // load image function
-        ]
+        ];
+        this.playerImage = loadImage('player/run.gif');
+        this.mineralImage = loadImage('obstacles/PNG/Transperent/Icon44.png');
     }
     
     draw() {
@@ -22,6 +34,26 @@ class Game {
         //all the objects are drawn that the game needs
         this.background.draw();
         
+        this.player.draw();
+        // this adds minerals to obstacles array
+        if(frameCount % 120 === 0) {
+            this.obstacles.push(new Obstacle(this.mineralImage));
+            console.log(this.obstacles);
+        }
+
+        // we need to iterate over the obstacles array and call for every object
+        // inside draw function
+        this.obstacles.forEach(function(obstacle) {
+            obstacle.draw();
+        })
+        this.obstacles = this.obstacles.filter((obstacle) => {
+            // if we colide obstacle moves out of screen
+            if (obstacle.collision(this.player) || (obstacle.x + obstacle.width) < 0) {
+                return false
+            }else {
+                return true
+            }
+        })
     }
     
     
