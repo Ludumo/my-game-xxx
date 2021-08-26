@@ -1,7 +1,8 @@
 class Player {
 
     constructor() {
-
+        this.energy = 100;
+        this.score = 0;
         this.gravity = 0.2;
         this.velocity = 0;
         this.width = 100;
@@ -29,4 +30,7 @@ class Player {
         console.log('jump');
         this.velocity = -10;
     }
+    //status bar
+    fill = 0;
+    textSize = 10;
 }

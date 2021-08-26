@@ -27,6 +27,8 @@ class Game {
         ];
         this.playerImage = loadImage('player/run.gif');
         this.mineralImage = loadImage('obstacles/PNG/Transperent/Icon44.png');
+        this.poisonImage = loadImage('obstacles/PNG/Transperent/Icon7.png');
+
     }
     
     draw() {
@@ -37,10 +39,14 @@ class Game {
         this.player.draw();
         // this adds minerals to obstacles array
         if(frameCount % 120 === 0) {
-            this.obstacles.push(new Obstacle(this.mineralImage));
-            console.log(this.obstacles);
+            this.obstacles.push(new Obstacle(this.mineralImage, 'mineral'));
+           // console.log(this.obstacles);
         }
 
+        if(frameCount % 120 === 0) {
+            this.obstacles.push(new Obstacle(this.poisonImage, 'poison'));
+           // console.log(this.obstacles);
+        }
         // we need to iterate over the obstacles array and call for every object
         // inside draw function
         this.obstacles.forEach(function(obstacle) {
