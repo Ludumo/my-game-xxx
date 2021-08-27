@@ -13,6 +13,7 @@ class Game {
     setup() {
         this.background = new Background();
             this.player = new Player();
+            
     }
 
     preloadGame() {
@@ -66,5 +67,5 @@ class Game {
 
         let scoreElement = select('#score').html("Score:" + this.player.score);
         let energyElement = select('#energy').html("Energy:" + this.player.energy);
-    }
+    } 
 }
