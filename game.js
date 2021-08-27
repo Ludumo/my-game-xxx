@@ -1,8 +1,10 @@
-class Game {
+let gameStart = true;
 
+class Game {
+    
     constructor() {
         /* this.background = new Background();
-            this.player = new Player(); */
+        this.player = new Player(); */
         this.backgroundImages = [];
         this.playerImage = null;
         this.obstacles = [];    
@@ -38,12 +40,12 @@ class Game {
         
         this.player.draw();
         // this adds minerals to obstacles array
-        if(frameCount % 120 === 0) {
+        if(gameStart === true && frameCount % 120 === 0) {
             this.obstacles.push(new Obstacle(this.mineralImage, 'mineral'));
            // console.log(this.obstacles);
         }
-
-        if(frameCount % 120 === 0) {
+            //this adds poison to obstacles array
+        if(gameStart === true && frameCount % 120 === 0) {
             this.obstacles.push(new Obstacle(this.poisonImage, 'poison'));
            // console.log(this.obstacles);
         }
@@ -59,8 +61,10 @@ class Game {
             }else {
                 return true
             }
+            
         })
+
+        let scoreElement = select('#score').html("Score:" + this.player.score);
+        let energyElement = select('#energy').html("Energy:" + this.player.energy);
     }
-    
-     
 }

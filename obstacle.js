@@ -3,7 +3,7 @@ class Obstacle {
     constructor(image, type) {
         this.image = image;
         this.x = width;
-        this.y = (Math.random() * height) / 2.5;
+        this.y = (Math.random() * height) / 1.5 ;
         this.width = 50;
         this.height = 50;
         this.type = type;
@@ -32,6 +32,7 @@ class Obstacle {
           console.log(this.image);
       if (this.type === 'mineral') {
           game.player.score += 10 
+          
         }
         if (this.type === 'poison') {
             game.player.energy -= 10
@@ -39,7 +40,7 @@ class Obstacle {
         console.log (game.player.energy);
         console.log(game.player.score);
         return true;
-      }
+      } 
     }
 
 }
